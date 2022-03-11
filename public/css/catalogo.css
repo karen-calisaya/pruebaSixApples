@@ -1,0 +1,114 @@
+:root {
+    /* COLORES */
+    --color-verdeClaro: #dfffbe;
+    --color-verdeOscuro: #92c88a;
+    /* FUENTES */
+    --font-poppins: 'Poppins', sans-serif;
+    /* TAMAÑOS DE FUENTES */
+    --title: 16px;
+    --paragraph: 14px;  
+    --precios: 18px;
+    --otrasDescripciones: 16px;
+}
+
+/* ESTILOS GENERALES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.catalogo a{
+    text-decoration: none;
+    color: black;
+}
+
+body.catalogo main.main-catalogo {
+    font-family: var(--font-poppins);
+    margin: 0 auto;
+ 
+}
+
+body.catalogo main.main-catalogo h2.titulo-catalogo{
+    text-align: center;
+    font-size: var(--title);
+}
+
+main.main-catalogo hr.hr-separacion{
+    margin-bottom: 10px;
+}
+
+body.catalogo main.main-catalogo article.productos-catalogo{
+    margin: 15px 15px;
+    border: solid 2px red;
+}
+
+main.main-catalogo article.productos-catalogo div.foto-catalogo img{
+    box-shadow: 0 0 8px 2px rgba(0,0,0,0.3);
+}
+article.detalles-catalogo{
+    margin-left: 12px;
+}
+
+section.frutas-section article.detalles-catalogo p {
+    font-size: 14px;
+}
+
+section.frutas-section article.detalles-catalogo p.precio-catalogo{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+section.frutas-section article.detalles-catalogo button{
+    margin-left: 30%;
+}
+
+button.add-button {
+    background-color: lightgray;
+    border-radius: 9px;
+    border-style: none;
+    padding: 6px;
+}
+
+button.add-button:hover{
+    background-color: var(--color-verdeOscuro);
+}
+
+button.add-button p.add{
+    font-size: 10px;
+    font-weight: 600;
+    font-family: var(--font-poppins); 
+    margin-left: -4px;
+}
+
+main.main-catalogo section.frutas-section{
+    display: flex;
+    flex-wrap: wrap; 
+    /* max-width: 420px; */
+}
+
+main.main-catalogo section.frutas-section article.productos-catalogo {
+    max-width: 150px;
+    margin: 10px auto;
+    justify-content: center;
+}
+
+@media (min-width: 768px){
+    body.catalogo main.main-catalogo {
+        font-family: var(--font-poppins);
+        margin: 0 auto;
+     
+    }
+
+     /*   padding: 0 15px; */
+    main.main-catalogo section.frutas-section{
+        display: flex;
+        flex-wrap: wrap; 
+    }
+    
+    main.main-catalogo section.frutas-section article.productos-catalogo {
+        max-width: 200px;
+        margin: 10px auto;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,53 @@
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.quienesSomos {
+    font-family: 'poppins';
+    background-image: url('/images/fondo.png');
+    background-size:contain;
+    background-repeat: repeat;
+}
+
+body.quienesSomos main.somos-main div.somos-container{
+    width: 80%;
+    padding:1.5rem;
+    background-color: white;
+    border: solid 1px black;
+    box-shadow: 0 0 8px 2px rgba(0,0,0,0.3);;
+    margin: 0 auto;
+}
+
+section.section-data {
+    text-align: center;
+}
+
+section.section-data h2.titulo-info{
+    font-size: 16px;
+    margin: 4px 0px;
+}
+section.section-data p.desarrollo-info{
+    font-size: 14px;
+    margin-top: 7px;
+}
+
+@media (min-width: 768){
+    /* necesaria? */
+}
+
+@media (min-width:1100px){
+    body.quienesSomos main.somos-main div.somos-container{
+        width: 80%;
+        padding:2rem;
+    }
+
+    section.section-data h2.titulo-info{
+        font-size: 18px;
+    }
+
+    section.section-data.desarrollo-info{
+        font-size: 16px;
+    }
+}
