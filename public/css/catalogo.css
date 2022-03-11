@@ -26,8 +26,11 @@ body.catalogo a{
 body.catalogo main.main-catalogo {
     font-family: var(--font-poppins);
     margin: 0 auto;
- 
 }
+
+/* end estilos generales */
+
+/* main catalogo */
 
 body.catalogo main.main-catalogo h2.titulo-catalogo{
     text-align: center;
@@ -40,27 +43,43 @@ main.main-catalogo hr.hr-separacion{
 
 body.catalogo main.main-catalogo article.productos-catalogo{
     margin: 15px 15px;
-    border: solid 2px red;
+   /*  border: solid 2px red; */
 }
 
-main.main-catalogo article.productos-catalogo div.foto-catalogo img{
+main.main-catalogo article.productos-catalogo div.foto-catalogo {
     box-shadow: 0 0 8px 2px rgba(0,0,0,0.3);
 }
-article.detalles-catalogo{
-    margin-left: 12px;
+
+main.main-catalogo article.productos-catalogo div.foto-catalogo:hover {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02);
 }
 
-section.frutas-section article.detalles-catalogo p {
+article.detalles-catalogo{
+    margin-left: 12px;
+    margin-top: 8px;
+}
+
+section.frutas-section article.detalles-catalogo p{
     font-size: 14px;
+}
+
+main.main-catalogo section.frutas-section{
+    display: flex;
+    flex-wrap: wrap; 
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+main.main-catalogo section.frutas-section article.productos-catalogo {
+    max-width: 150px;
+    margin: 10px auto;  /* cambia en tablet */
+    justify-content: center; 
 }
 
 section.frutas-section article.detalles-catalogo p.precio-catalogo{
     font-size: 18px;
     font-weight: 600;
-}
-
-section.frutas-section article.detalles-catalogo button{
-    margin-left: 30%;
 }
 
 button.add-button {
@@ -81,34 +100,47 @@ button.add-button p.add{
     margin-left: -4px;
 }
 
-main.main-catalogo section.frutas-section{
-    display: flex;
-    flex-wrap: wrap; 
-    /* max-width: 420px; */
-}
+/* end MAIN CATALOGO */
 
-main.main-catalogo section.frutas-section article.productos-catalogo {
-    max-width: 150px;
-    margin: 10px auto;
-    justify-content: center;
-}
-
+/* media querie version tablet */
 @media (min-width: 768px){
-    body.catalogo main.main-catalogo {
-        font-family: var(--font-poppins);
+    main.main-catalogo section.frutas-section{
+        justify-content: space-around;
+        max-width: fit-content;
         margin: 0 auto;
-     
+    }  
+    main.main-catalogo section.frutas-section article.productos-catalogo {
+        max-width: 240px;
+        width: 50%;
+        margin: 15px auto;
+    }
+    button.add-button {
+        margin-left: 50px;
+    }
+}
+
+/* media querie version compu */
+
+@media (min-width: 1100){
+
+    section.frutas-section{
+        max-width:min-content;
+    }
+    main.main-catalogo section.frutas-section{
+        justify-content: space-around;
+        max-width: 1140px;
+        margin: 0 auto;
+        /* max-width: 1250px;
+        margin: 0 auto; */
+    }  
+
+    main.main-catalogo section.frutas-section article.productos-catalogo {
+        max-width: 1500px;
+        margin: 10px auto;  /* cambia en tablet */
+        justify-content: center; 
     }
 
-     /*   padding: 0 15px; */
-    main.main-catalogo section.frutas-section{
-        display: flex;
-        flex-wrap: wrap; 
-    }
-    
-    main.main-catalogo section.frutas-section article.productos-catalogo {
-        max-width: 200px;
-        margin: 10px auto;
-        justify-content: center;
-    }
+  /*  quiero que toda la secction de productos crezca hasta cierto
+  y que despues me muestre los margenes */
+
 }
