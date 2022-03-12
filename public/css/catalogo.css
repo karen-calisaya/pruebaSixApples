@@ -1,15 +1,6 @@
-:root {
-    /* COLORES */
-    --color-verdeClaro: #dfffbe;
-    --color-verdeOscuro: #92c88a;
-    /* FUENTES */
-    --font-poppins: 'Poppins', sans-serif;
-    /* TAMAÑOS DE FUENTES */
-    --title: 16px;
-    --paragraph: 14px;  
-    --precios: 18px;
-    --otrasDescripciones: 16px;
-}
+@import url(home.css);
+
+
 
 /* ESTILOS GENERALES */
 * {
@@ -43,7 +34,6 @@ main.main-catalogo hr.hr-separacion{
 
 body.catalogo main.main-catalogo article.productos-catalogo{
     margin: 15px 15px;
-   /*  border: solid 2px red; */
 }
 
 main.main-catalogo article.productos-catalogo div.foto-catalogo {
@@ -119,28 +109,15 @@ button.add-button p.add{
     }
 }
 
-/* media querie version compu */
+/* media querie version DESKTOP */
 
-@media (min-width: 1100){
-
-    section.frutas-section{
-        max-width:min-content;
-    }
+@media (min-width: 1100px){
     main.main-catalogo section.frutas-section{
-        justify-content: space-around;
-        max-width: 1140px;
-        margin: 0 auto;
-        /* max-width: 1250px;
-        margin: 0 auto; */
+        padding: 0 30px;
     }  
 
-    main.main-catalogo section.frutas-section article.productos-catalogo {
-        max-width: 1500px;
-        margin: 10px auto;  /* cambia en tablet */
-        justify-content: center; 
-    }
-
-  /*  quiero que toda la secction de productos crezca hasta cierto
-  y que despues me muestre los margenes */
+    body.catalogo main.main-catalogo article.productos-catalogo {
+        width: 60%;
+}
 
 }

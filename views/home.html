@@ -17,31 +17,44 @@
 
 <body class="homepage">
     <header class="header-home">
-        <div>
-            <a href="#"><img class="logo" src="images/logoFinal.png" alt="logo"></a>
-        </div>
-        <div class="busqueda"> <!-- barra de busqueda que desaparece en movile y tablet-->
-            <input type="text" placeholder=" Buscar..." class="barra">
-        </div>
-        <div class="iconos">
-            <i id="lupa" class="fas fa-search"></i> 
-            <i class="fa-regular fa-circle-user"></i>
-            <nav class="burger-menu"> 
-                    <i class="fas fa-bars"></i>
+        <div class="header-top">
+            <div class="logo">
+                <a href="#"><img src="images/logoFinal.png" alt="logo"></a>
+            </div>
+            <form action="" method="">
+                <input id="barra" type="search" placeholder="  Buscar..."><i id="lupa" class="fas fa-search"></i>
+            </form>
+            <nav class="menu-home1">
+                <ul>
+                    <li id="ingresa"><a href="#">Ingresá</a></li><a href="#"><i id="user" class="fa-regular fa-circle-user"></i></a>
+                    <li><a href="#"><i id="carrito" class="fa-solid fa-cart-shopping"></i></a></li>
+                </ul>
             </nav>
-        </div>
-        <nav class="menu-desktop"> 
-                <ul class="menu-top"> <!-- Agrege clases -->
-                    <li><a href="">Ingresá</a></li>
-                    <li><a href=""><i class="fa-solid fa-cart-shopping"></i></a></li>
+            <nav class="menu-home2">
+                <input type="checkbox" id="menu">
+                <label for="menu" id="hamburguesa"> ☰ </label>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Catálogo</a></li>
+                    <li><a href="#">Ofertas</a></li>
+                    <li><a href="#">¿Quiénes somos?</a></li>
                 </ul>
-                <ul class="menu-buttom">
-                    <li><a href="">Inicio</a></li>
-                    <li><a href="">Catálogo</a></li>
-                    <li><a href="">Ofertas</a></li>
-                    <li><a href="">¿Quiénes somos?</a></li>
-                </ul>
-        </nav> 
+            </nav>
+            </div>
+            <div class="menu-home3container">
+                <nav class="menu-home3">
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Catálogo</a></li>
+                        <li><a href="#">Ofertas</a></li>
+                        <li><a href="#">¿Quiénes somos?</a></li>
+                    </ul>
+    
+                </nav>
+
+            </div>
+       
+
     </header>
     <main class="main-homepage">
         <!-- Carrusel -->
@@ -104,7 +117,7 @@
             </article>
             <article class="producto none-oferta">
                 <div class="contenedor-foto">
-                    <a href="#"><img width="100%" src="images/oferta2.jpeg" alt="ofertaZahahoria"></a>
+                    <a href="#"><img width="100%" src="images/oferta3.jpeg" alt="ofertaZahahoria"></a>
                 </div>
                 <button class="boton-ofertas">
                     <h4>COMPRAR</h4>
@@ -144,7 +157,7 @@
         <section class="destacados">
             <article class="producto">
                 <div class="contenedor-foto">
-                    <a href="#"><img width="100%" src="images/pera.png" alt="imagen pera"></a><!-- image a photo -->
+                    <a href="#"><img width="100%" src="images/Pera.png" alt="imagen pera"></a><!-- image a photo -->
                 </div>
                 <article class="detalles">
                     <p>Pera</p>
@@ -157,7 +170,7 @@
             </article>
             <article class="producto">
                 <div class="contenedor-foto">
-                    <a href="#"><img width="100%" src="images/uva.png" alt="imagen uva"></a><!-- image a photo -->
+                    <a href="#"><img width="100%" src="images/Uva.png" alt="imagen uva"></a><!-- image a photo -->
                 </div>
                 <article class="detalles">
                     <p>Uva</p>
@@ -198,7 +211,7 @@
     </main>
     <footer class="footer-homepage">
         <div id="logo-footer">
-            <img src="images/logoFooter.png" alt="logoFooter">
+            <a href=""><img src="images/logoFooter.png" alt="logoFooter"></a> 
         </div>
         <div>
             <nav class="data-footer">
@@ -212,12 +225,12 @@
         <section class="section-footer">
             <nav class="navegacion-footer">
                 <ul class="list-footer">
-                    <li>Política de Privacidad</li>
-                    <li>Protección de datos personales</li>
+                    <li><a href="">Política de Privacidad</a></li>
+                    <li><a href="">Protección de datos personales</a></li>
                 </ul>
                 <ul class="list-footer">
-                    <li>Defensa del consumidor</li>
-                    <li>Contacto</li>
+                    <li><a href="">Defensa del consumidor</a></li>
+                    <li><a href="">Contacto</a></li>
                 </ul>
             </nav>         
             <div class="image-bottom">
@@ -226,37 +239,7 @@
             </div>
         </section>
     </footer>
-
-    <!-- Script carrusel -->
-    <script> 
-        var slideIndex = 1;
-        showSlides(slideIndex);
-            
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-            
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-            
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {slideIndex = 1}    
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";  
-            dots[slideIndex-1].className += " active";
-        }
-    </script>
-    <!-- end script carrusel -->
-
+    <!-- script carrusel -->
+    <script src="javascript/carrusel.js"></script>
 </body>
 </html>
