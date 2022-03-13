@@ -7,6 +7,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'poppins';
 }
 
 body.catalogo a{
@@ -14,18 +15,21 @@ body.catalogo a{
     color: black;
 }
 
-body.catalogo main.main-catalogo {
-    font-family: var(--font-poppins);
-    margin: 0 auto;
+body.catalogo li {
+    list-style: none;
 }
 
+body.catalogo main.main-catalogo {
+    margin: 0 auto;
+}
 /* end estilos generales */
 
 /* main catalogo */
 
-body.catalogo main.main-catalogo h2.titulo-catalogo{
+body.catalogo main.main-catalogo h3.titulo-catalogo{
     text-align: center;
     font-size: var(--title);
+    margin: 25px 0 5px 0;
 }
 
 main.main-catalogo hr.hr-separacion{
@@ -94,6 +98,10 @@ button.add-button p.add{
 
 /* media querie version tablet */
 @media (min-width: 768px){
+
+    body.catalogo main.main-catalogo h3.titulo-catalogo{
+        font-size: 28px;
+    }
     main.main-catalogo section.frutas-section{
         justify-content: space-around;
         max-width: fit-content;

@@ -25,7 +25,7 @@ main.main-homepage {
     padding: 15px 10px 0;
 }
 
-body.homepage a{
+body a{
     color:black;
     text-decoration: none;
 }
@@ -412,6 +412,9 @@ main.main-homepage section article.none1 {
 /* end DESTACAD0S */
 
 /* FOOTER */
+body.homepage footer {
+    margin-bottom: 0px;
+}
 footer.footer-homepage {
     background-color: var(--color-verdeOscuro);
     padding: 10px 0px; /* para espacio arriba */
