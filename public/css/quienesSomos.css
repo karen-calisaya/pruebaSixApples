@@ -19,16 +19,20 @@ body.quienesSomos {
 
 body.quienesSomos main.somos-main div.somos-container{
     width: 80%;
-    padding:1.5rem;
-    background-color: white;
-    border: solid 1px black;
-    box-shadow: 0 0 8px 2px rgba(0,0,0,0.3);
-    margin: 0 auto;
-   
+    margin: 55px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;   
 }
 
 section.section-data {
+    padding: 1.5rem;
     text-align: center;
+    background-color: white;
+    border: solid 1px black;
+    box-shadow: 0 0 8px 2px rgba(0,0,0,0.3);
 }
 
 section.section-data h2.titulo-info{
@@ -41,12 +45,11 @@ section.section-data p.desarrollo-info{
 }
 
 @media (min-width: 768){
-    /* necesaria? */
+   /* necesaria? */
 }
 
 @media (min-width:1100px){
     body.quienesSomos main.somos-main div.somos-container{
-        width: 80%;
         padding:2rem;
     }
 
