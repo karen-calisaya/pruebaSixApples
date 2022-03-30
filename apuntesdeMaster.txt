@@ -1,0 +1,5 @@
+quiero practicar el trabajo en ramas en git
+
+aqui tengo mi rama master al cual le faltan el archivo que cree en development y 
+el archivo que cree en feature/apuntes
+debo traerlos
