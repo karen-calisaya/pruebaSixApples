@@ -19,16 +19,16 @@ body.quienesSomos {
 
 body.quienesSomos main.somos-main div.somos-container{
     width: 80%;
-    margin: 55px auto;
+    margin: 190px auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 600px;   
+   /*  height: 600px;    */
 }
 
 section.section-data {
-    padding: 1.5rem;
+    padding: 3rem;
     text-align: center;
     background-color: white;
     border: solid 1px black;

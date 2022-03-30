@@ -15,7 +15,7 @@ body.catalogo a{
     color: black;
 }
 
-body.catalogo li {
+body.catalogo ul {
     list-style: none;
 }
 
@@ -81,6 +81,7 @@ button.add-button {
     border-radius: 9px;
     border-style: none;
     padding: 6px;
+    transition: all 0.5s ease-in;
 }
 
 button.add-button:hover{
