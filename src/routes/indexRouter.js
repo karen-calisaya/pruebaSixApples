@@ -5,4 +5,6 @@ const indexController = require('../controllers/indexController')
 /* ruta por get */
 router.get('/', indexController.index)
 
+router.get('/quienessomos', indexController.about)
+
 module.exports = router;

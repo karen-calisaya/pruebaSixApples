@@ -5,6 +5,7 @@ const path = require('path');
 
 /* enrutadores */
 const indexRouter = require('./routes/indexRouter');
+const 
 
 app.use(express.static('public'));
 
@@ -19,13 +20,6 @@ app.set('views', 'src/views');
 app.use('/', indexRouter);
 
 
-/* app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/home.html'))
-}); */
-
-app.get('/quienessomos', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/quienessomos.html'))
-})
 
 app.get('/carrito', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/carrito.html'))

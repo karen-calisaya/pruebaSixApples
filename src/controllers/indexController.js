@@ -3,5 +3,10 @@ module.exports = {
         res.render('home', {
             titulo: 'Six apples'
         })
+    },
+    about: (req, res) => {
+        res.render('quienessomos', {
+            titulo: 'Quienes somos'
+        })
     }
 }
