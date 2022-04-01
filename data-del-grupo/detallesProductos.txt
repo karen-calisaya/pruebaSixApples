@@ -10,10 +10,12 @@
 .mango, tipo: Tommy Atkins, Procedencia: Salta, id: 109, precio: $460
 .Frutilla, tipo: Douglas, procedencia: California, id: 110, precio: $480
 .sandia, tipo: Charleston Grey, procedencia: Formosa, id: 111, precio: $390
+
 .Lechuga, tipo: Romana, procedencia: China, id: 112, precio: $520
 .tomate, tipo: Raf, procedencia: San Juan, id: 113, precio: $390
 .Repollo, tipo: Durham Early, procedencia: China, id: 114, precio: $480
 .Acelga, tipo: Lyon, procedencia: Neuquen, id:115, precio:$ 200
+
 .zapallo, tipo: anco, procedencia: Buenos Aires, id: 116, precio: $230
 .Zanahoria, tipo: Danvers, procedencia: Francia, id:117, precio $250
 .Cebolla, tipo: Blanca, procedencia: Rio Negro, id: 118, precio: $130

@@ -5,19 +5,22 @@ const path = require('path');
 
 /* enrutadores */
 const indexRouter = require('./routes/indexRouter');
-const 
-
-app.use(express.static('public'));
-
-app.listen(PORT, () => console.log(`Servidor escuchando en el puerto ${PORT}
-http://localhost:${PORT}`));
 
 /* views config */
 app.set('view engine', 'ejs');
 app.set('views', 'src/views'); 
 
+
+/* config archivos estaticos */
+app.use(express.static('public'));
+
 /* middlewares de rutas*/
 app.use('/', indexRouter);
+
+
+app.listen(PORT, () => console.log(`Servidor escuchando en el puerto ${PORT}
+http://localhost:${PORT}`));
+
 
 
 
