@@ -6,7 +6,11 @@
     box-sizing: border-box;
     font-family: 'poppins';
 }
-body.body-ofertas,
+
+body.body-ofertas ul{
+    list-style: none;
+}
+
 main.main-ofertas{
     padding: 0 10px;
 }
@@ -39,6 +43,11 @@ main.main-ofertas article.producto-oferta div.contenedor-oferta img{
     margin-bottom: 15px;
 }
 
+main.main-ofertas article.producto-oferta div.contenedor-oferta img:hover{
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02);
+}
+
 main.main-ofertas article.producto-oferta .detalles{
     text-align: center;
 }
@@ -46,6 +55,19 @@ main.main-ofertas article.producto-oferta .detalles{
 main.main-ofertas article.producto-oferta button {
   /*   margin-left: 10px; */
     margin: 15px 0 25px 0;
+}
+
+main.main-ofertas article.producto-oferta button.boton-ofertas{
+    border: none;
+    background-color: lightgray;
+    border-radius: 9px;
+    padding: 6px;
+    transition: all 0.5s ease-in;
+}
+
+main.main-ofertas article.producto-oferta button.boton-ofertas:hover{
+    background-color: var(--color-verdeOscuro);
+    color: white;
 }
 
 /* VERSION TABLET */

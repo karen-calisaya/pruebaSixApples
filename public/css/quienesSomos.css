@@ -1,63 +1,96 @@
 @import url(home.css);
 
-* {
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    /* COLORES */
+    --color-verdeClaro: #dfffbe;
+    --color-verdeOscuro: #92c88a;
+    --color-natural: #FEFFDF; 
+    /* FUENTES */
+    --font-poppins: 'Poppins', sans-serif;
+    /* TAMAÑOS DE FUENTES */
+    --title: 16px;
+    --paragraph: 14px;  
+    --precios: 18px;
+    --otrasDescripciones: 16px;
 }
 
-body.quienesSomos ul {
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body.quienessomos ul{
     list-style: none;
 }
 
-body.quienesSomos {
-    font-family: 'poppins';
-    background-image: url('/images/fondo.png');
-    background-size:contain;
-    background-repeat: repeat;
-}
-
-body.quienesSomos main.somos-main div.somos-container{
-    width: 80%;
-    margin: 190px auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+body.quienessomos{
+    font-family: var(--font-poppins);
+    /*font-size: var(--paragraph);*/
+    /*display: flex;*/
+   /* justify-content: center;
     align-items: center;
-   /*  height: 600px;    */
+   /* padding:  0 16px; */
+    background-image: url('/images/imagenbody.jpg'); 
+    background-size: contain;
+    min-height: 100vh;
 }
 
-section.section-data {
-    padding: 3rem;
-    text-align: center;
+body.quienessomos section.quienessomos-section{
+    border-radius: 10px;
+    padding: 1rem;
     background-color: white;
-    border: solid 1px black;
-    box-shadow: 0 0 8px 2px rgba(0,0,0,0.3);
+    width: 90%;
+    margin: 50px auto;
 }
 
-section.section-data h2.titulo-info{
-    font-size: 16px;
-    margin: 4px 0px;
-}
-section.section-data p.desarrollo-info{
-    font-size: 14px;
-    margin-top: 7px;
+section.quienessomos-section{
+    opacity:80%
 }
 
-@media (min-width: 768){
-   /* necesaria? */
+body.quienessomos h1{
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 20px;
 }
 
-@media (min-width:1100px){
-    body.quienesSomos main.somos-main div.somos-container{
-        padding:2rem;
+body.quienessomos p{
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 15px; 
+}
+
+/* Media Querys Version Tablet */ 
+@media(min-width:768px){
+    body.quienessomos section.quienessomos-section{
+        padding: 2rem;
+        background-color: white;
+        max-width: 50%;
+        margin: 70px auto ;
     }
 
-    section.section-data h2.titulo-info{
-        font-size: 18px;
+    section.quienessomos-section form p {
+        font-size: 17px;
+    }
+}
+
+/* Media Querys Version Escritorio */
+@media(min-width: 1024px){
+    body.quienessomos section.quienessomos-section{
+        padding: 3rem;
+        background-color: white;
+        max-width: 70%;
+        margin: 70px auto ;
     }
 
-    section.section-data.desarrollo-info{
-        font-size: 16px;
+    section.quienessomos-section form p {
+        font-size: 19px;
+    }
+
+    body.quienessomos footer{
+        position: relative;
+        bottom: 0;
+        right:0; 
     }
 }

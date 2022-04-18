@@ -1,8 +1,0 @@
-Para hacer rutas y metodos HTTP:
-
-paso 1: estructuracion de carpetas(src/controllers/data/routes/views/partials app.js)
-paso 2: comenzamos a usar templat engine, descargamos (npm install ejs), en el app.js configuramos 
-el motor de plantillas
-paso 3: cambio la extension de los html a ejs
-paso 4: pensar en que va a gestionar nuestra aplicacion y las rutas que ira utilizando
-  - indexRouter(puede gestionar a traves de metodo GET, la vista del home y de quienes somos)

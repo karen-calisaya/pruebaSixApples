@@ -1,37 +1,33 @@
 const express = require('express');
 const app = express();
-const PORT = 3000;
 const path = require('path');
-
-/* enrutadores */
-const indexRouter = require('./routes/indexRouter');
-
-/* views config */
-app.set('view engine', 'ejs');
-app.set('views', 'src/views'); 
+/* requerimos dotenv para la variable de entorno */
+require('dotenv').config();
+const port = process.env.port || 3000;
 
 
-/* config archivos estaticos */
+
+/* Enrutadores */
+const indexRouter = require("./routes/indexRouter")
+const productRouter = require("./routes/productsRouter")
+const userRouter = require("./routes/userRouter")
+const adminRouter = require("./routes/adminRouter")
+
+
+/* config de archivos estaticos */
 app.use(express.static('public'));
 
-/* middlewares de rutas*/
-app.use('/', indexRouter);
+/* views ejs config  */
+app.set('view engine', 'ejs')
+app.set('views', 'src/views')
+
+/* Middlewares de Rutas */
+app.use("/",indexRouter)  //Home , About
+app.use("/productos", productRouter)  //Productos: carrito, detalle, catalogo, ofertas.
+app.use("/usuario", userRouter) //Usuario: perfil, registro.
+app.use("/admin", adminRouter) //admin, CRUD products, users, categorias
 
 
-app.listen(PORT, () => console.log(`Servidor escuchando en el puerto ${PORT}
-http://localhost:${PORT}`));
+/* servidor escuchando */
 
-
-
-
-app.get('/carrito', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/carrito.html'))
-})
-
-app.get('/catalogo', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/catalogo.html'))
-})
-
-app.get('/ofertas', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/ofertas.html'))
-})
+app.listen(port, () => console.log(`servidor levantado en el puerto ${port} http://localhost:${port}`))

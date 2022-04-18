@@ -16,6 +16,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    list-style: none;
 }
 
 body.homepage {
@@ -41,7 +42,8 @@ body header.header-home{
     width: 100%;
 }
 header.header-home div.header-top div.logo img{
-    width: 35%;
+    width: 35%; 
+    object-fit: contain; 
 }
 
 header.header-home div.header-top{
@@ -52,6 +54,11 @@ header.header-home div.header-top{
 header.header-home div.header-top form input#barra,
 header.header-home div.header-top nav.menu-home1 ul i#carrito {
     display: none;
+}
+
+header.header-home div.header-top form button#lupa{
+    border: none;
+    background-color: rgba(187, 187, 187, 0);
 }
 
 header.header-home div.header-top nav.menu-home1 ul li#ingresa{
@@ -65,12 +72,13 @@ header.header-home div.header-top nav.menu-home1 #user{
 
 header.header-home div.header-top nav.menu-home2 input{
     display: none;
-} 
+}
 
 header.header-home div.header-top{
     display: flex;
     justify-content:space-around;
     align-items: center;
+    /* margin-right: 3px; */
 }
 
 header.header-home button{
@@ -79,19 +87,19 @@ header.header-home button{
     background-color: var(--color-verdeClaro);
 }
 
-nav#menu {
+header.header-home nav#menu {
     display: none;
     padding: 1rem;
     background-color: var(--color-verdeClaro);
     text-align: center;
     border-radius: 10px;
-    position:fixed;
+    position:absolute;  /* antes fixed*/
     top:66px;
     right:-100%;
     z-index: 10;
     width: 100%;
 }
-nav#menu ul li:hover{
+header.header-home nav#menu ul li:hover{
     font-weight: 600;
 }
 
@@ -106,7 +114,7 @@ nav#menu ul li:hover{
     }
 }
 
-nav#menu.active {
+header.header-home nav#menu.active {
     display:block;
     opacity: 1;
     animation: fade-in 2s;
@@ -197,7 +205,7 @@ main.main-homepage a.next{
 /* END CARRUSEL STYLES */
 
 /* OFERTAS BOLSONES */
-#titulo {
+main.main-homepage h3#titulo {
     font-size: var(--title);
     text-align: center;
     margin: 10px 0;
@@ -219,22 +227,23 @@ main.main-homepage section article.producto div.contenedor-foto {
     margin: 0 auto;
     box-shadow: 0 0 8px 2px rgba(0,0,0,0.3);
 }
-.contenedor-foto:hover{
+main.main-homepage section article.producto div.contenedor-foto:hover{
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     transform: scale(1.02);
 
 }
 
-.boton-ofertas{
+main.main-homepage section article button.boton-ofertas{
     background-color: lightgray;
     padding: 8px;
     text-align: center;
     border-style: none;
     border-radius: 10px;
     margin-top: 18px;
+    transition: all 0.3s ease-in;
 }
 
-.boton-ofertas:hover{
+main.main-homepage section article button.boton-ofertas:hover{
     background-color: var(--color-verdeOscuro); /* PONIENDO COLOR A LOS BOTONES */
     color: white;
 }
@@ -255,20 +264,21 @@ main.main-homepage section article p.precio {
     font-weight: bold;
 }
 
-.opciones {
+main.main-homepage section article div.opciones {
     display: flex;
     justify-content: space-between;
 }
 
-#cantidad{
+main.main-homepage section article button#cantidad{
     background-color: lightgray;
     border-radius: 8px;
     border-style: none;
     padding: 10px;
     flex-grow: 0.05;
     margin-left: 10px;
+    transition: all 0.3s ease-in;
 } 
-#cantidad:hover{
+main.main-homepage section article button#cantidad:hover{
     background-color: var(--color-verdeOscuro);
     color: white;
 }
@@ -276,7 +286,7 @@ main.main-homepage section article p.precio {
 
 /* INFORMACION de envios y demas*/ 
 
-#informacion article {
+main.main-homepage section#informacion article {
     justify-content: space-between;
     text-align: center;
     padding-top: 20px;
@@ -284,7 +294,7 @@ main.main-homepage section article p.precio {
     font-size: var(--paragraph);
 }
 
-#informacion article p {
+main.main-homepage section#informacion article p {
     margin-left: 30px;
     margin-right: 30px;
     text-align: center;
@@ -292,28 +302,31 @@ main.main-homepage section article p.precio {
 /* end INFORMACION de envios y demas*/
 
 /* DESTACADOS */
-main.main-homepage section article.none,
-main.main-homepage section article.none1 {
-    display: none;
-}
 
-.destacados {
+main.main-homepage section.destacados {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
-.detalles {  
+
+main.main-homepage section article.producto{
+    max-width: 300px;
+}
+
+main.main-homepage section article.detalles {  
     text-align: left;
-    margin: 0 20px;
+    margin: 0 30px;
     font-size: var(--paragraph);
 }
-.boton-agregar{
+main.main-homepage button.boton-agregar{
     background-color: lightgrey;
     border-radius: 9px;
     border-style: none;
     padding: 3px;
+    transition: all 0.3s ease-in;
 }
 
-.boton-agregar:hover{
+main.main-homepage button.boton-agregar:hover{
     background-color: var(--color-verdeOscuro);
 }
 
@@ -323,69 +336,8 @@ main.main-homepage section article.none1 {
     font-family: var(--font-poppins); 
     margin-left: -4px;
 }
-
-.destacados {
-    display: flex;
-    justify-content: space-between;
-}
-.detalles {  
-    text-align: left;
-    margin: 0 20px;
-    font-size: var(--paragraph);
-}
-.boton-agregar{
-    background-color: lightgrey;
-    border-radius: 9px;
-    border-style: none;
-    padding: 3px;
-}
-
-.boton-agregar:hover{
-    background-color: var(--color-verdeOscuro);
-}
-
-.boton-agregar p.add{
-    font-size: 10px;
-    font-weight: 600;
-    font-family: var(--font-poppins); 
-    margin-left: -4px;
-}
-
-/* end DESTACAD0S */
-
-.destacados {
-    display: flex;
-    justify-content: space-between;
-}
-.detalles {  
-    text-align: left;
-    margin: 0 20px;
-    font-size: var(--paragraph);
-}
-.boton-agregar{
-    background-color: lightgrey;
-    border-radius: 9px;
-    border-style: none;
-    padding: 3px;
-}
-
-.boton-agregar:hover{
-    background-color: var(--color-verdeOscuro);
-}
-
-.boton-agregar p.add{
-    font-size: 10px;
-    font-weight: 600;
-    font-family: var(--font-poppins); 
-    margin-left: -4px;
-}
-
-/* end DESTACAD0S */
 
 /* FOOTER */
-body.homepage footer {
-    margin-bottom: 0px;
-}
 footer.footer-homepage {
     background-color: var(--color-verdeOscuro);
     padding: 10px 0px; /* para espacio arriba */
@@ -424,8 +376,10 @@ footer.footer-homepage div nav p.copyright {
     font-size:6px; 
 }
 
-footer.footer-homepage hr{ /* margen a la linea de separacion */
+footer.footer-homepage hr.hr-footer{ /* margen a la linea de separacion */
     margin-bottom: 8px;
+    border-bottom: dotted 1px black;
+    margin: 0 10px;
 }
 
 .navegacion-footer{
@@ -467,7 +421,8 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen {
     header.header-home div.header-top form input#barra{
         display:  inline-block;
         border-radius: 11px;
-        width: 400px;
+        margin-left: 5px;
+        width: 150px;
     }
     header.header-home div.header-top form i#lupa{
         margin-right: 5px;
@@ -494,11 +449,11 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen {
     
     
     header.header-home div.header-top {
-        margin-right: 3px; /* nuevo margin */
+        margin-right: 3px; 
     }
 
 /* OFERTAS BOLSONES */
-   #titulo {
+    main.main-homepage h3#titulo {
     font-size: 28px;
     }
 
@@ -513,7 +468,7 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen {
 
 /* INFORMACION de envios y demas*/
 
- #informacion {
+ main.main-homepage section#informacion {
     display: flex;
     align-items: center;
 } 
@@ -523,14 +478,11 @@ main.main-homepage section article#cultivo-fresco{
 /* end INFORMACION de envios y demas*/
 
 /* DESTACADOS */
-main.main-homepage section article.none{
-    display: block;
-}
-main.main-homepage section article.none1{
-    display: none;
+main.main-homepage section.destacados {
+    flex-wrap: wrap;
 }
 
-.boton-agregar{
+main.main-homepage button.boton-agregar{
     padding: 5px;
 }
 
@@ -592,64 +544,35 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen{
     header.header-home div.header-top{
         max-width:1200px;
         margin:0 auto;
-    
+    }
+
+    header.header-home div.header-top form input#barra{
+        width: 300px;
     }
 
     header.header-home div.header-top div.logo img{
-        width: 45%;
+        width: 47%;
         margin-left: -15px;
     }
-    
-    header.header-home div.header-top form input#barra{
-        display:  inline-block;
-        border-radius: 11px;
-        width: 400px;
-    }
-    header.header-home div.header-top form i#lupa{
-        margin-right: 5px;
-        color: lightgray;
-    }
-
-    header.header-home div.header-top form input {
-        outline: none;
-        border: none;
-        height: 14px;
-
-    }
-    header.header-home div.header-top form {
-        background-color: white;
-        border: solid 1px black;
-        border-radius: 12px;
-        height: 23px;
-        margin: 0 50px 0 -50px 
-      
-    }
-
 
     header.header-home div.header-top nav.menu-home1 ul li#ingresa{
-        display: block;  /* cambio */
+        display: block;  
     }
 
     header.header-home div.header-top nav.menu-home1 #user{
-        display: none; /* cambio */
+        display: none; 
     }
-    
 
-    header.header-home div.header-top nav.menu-home2 ul{
-        display: none;
-    }
-    
     header.header-home div.header-top {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        margin-right: 3px;
     }
-
-    header.header-home button{
+ 
+    header.header-home button#boton-menu{
         display: none;
     }
-
+     
     header.header-home div.header-top nav.menu-home1 ul i#carrito {
         display: block;
         margin-left: 30px;
@@ -661,23 +584,16 @@ footer.footer-homepage section.section-footer div.image-bottom img#imagen{
         align-items: center;
     }
 
-    /* header.header-home div.menu-home3container nav.menu-home3 {
-        display: none;
-    } */
-
     header.header-home div.menu-home3container {
         display: block;
-        
     }
    
     header.header-home div.menu-home3container nav.menu-home3 ul{
         display: flex;
         justify-content: space-around;
         align-items: center;
-        
-        
     }
- 
+
 /* end HEADER */
 
 /* OFERTAS BOLSONES */
@@ -688,8 +604,10 @@ main.main-homepage section article.none-oferta{
 
 
 /* DESTACADOS */
-main.main-homepage section article.none1{
-    display: block;
+main.main-homepage section.destacados {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
 }
 /* end DESTACADOS */
 
