@@ -1,40 +1,33 @@
 const express = require('express');
 const app = express();
-const PORT = 3000;
 const path = require('path');
+/* requerimos dotenv para la variable de entorno */
+require('dotenv').config();
+const port = process.env.port || 3000;
 
-/* enrutadores */
-const indexRouter = require('./routes/indexRouter');
 
+
+/* Enrutadores */
+const indexRouter = require("./routes/indexRouter")
+const productRouter = require("./routes/productsRouter")
+const userRouter = require("./routes/userRouter")
+const adminRouter = require("./routes/adminRouter")
+
+
+/* config de archivos estaticos */
 app.use(express.static('public'));
 
-app.listen(PORT, () => console.log(`Servidor escuchando en el puerto ${PORT}
-http://localhost:${PORT}`));
+/* views ejs config  */
+app.set('view engine', 'ejs')
+app.set('views', 'src/views')
 
-/* views config */
-app.set('view engine', 'ejs');
-app.set('views', 'src/views'); 
+/* Middlewares de Rutas */
+app.use("/",indexRouter)  //Home , About
+app.use("/productos", productRouter)  //Productos: carrito, detalle, catalogo, ofertas.
+app.use("/usuario", userRouter) //Usuario: perfil, registro.
+app.use("/admin", adminRouter) //admin, CRUD products, users, categorias
 
-/* middlewares de rutas*/
-app.use('/', indexRouter);
 
+/* servidor escuchando */
 
-/* app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/home.html'))
-}); */
-
-app.get('/quienessomos', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/quienessomos.html'))
-})
-
-app.get('/carrito', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/carrito.html'))
-})
-
-app.get('/catalogo', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/catalogo.html'))
-})
-
-app.get('/ofertas', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/ofertas.html'))
-})
+app.listen(port, () => console.log(`servidor levantado en el puerto ${port} http://localhost:${port}`))
