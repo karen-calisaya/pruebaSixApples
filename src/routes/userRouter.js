@@ -3,20 +3,22 @@ const userController = require("../controllers/userController");
 const router = express.Router();
 const { check } = require('express-validator')
 
-const validaciones = [
+const validateRegister = [
     check('name')
-        .notEmpty().withMessage('Este campo es obligatorio').bail(),
+        .notEmpty().withMessage('Debes escribir tu nombre y apellido').bail()
+        .isLength({min: 5}).withMessage('El nombre y apellido deben tener al menos 5 caracteres'),
     check('email')
-        .notEmpty().withMessage('Este campo es obligatorio').bail()
-        .isEmail().withMessage('Debe ser un e-mail válido'),
+        .notEmpty().withMessage('Debes completar el email').bail()
+        .isEmail().withMessage('Debe ser un e-mail correcto'),
     check('password')
-        .notEmpty().withMessage('Este campo es obligatorio')
-        .isLength({min: 5})
-]
+        .notEmpty().withMessage('Debes completar la contraseña'). bail()
+        .isLength({min: 5}).withMessage('Debe ser una contraseña mayor a 5 caracteres')
+];
 
 /* Ruta para mostrar los productos */
 router.get('/', userController.login);
 router.get('/perfil', userController.profile);
-router.get('/registro', validaciones ,userController.register);
+router.get('/registro', userController.register);
+router.post('/registro', validateRegister, userController.processRegister);
 
 module.exports = router;
