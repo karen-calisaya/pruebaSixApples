@@ -11,21 +11,21 @@
         <br>
         <form action="/usuario/registro" method="post">
             <div class="input-container">
-                <input type="text" class="input-style" name="name" placeholder="Nombre Completo">
+                <input type="text" class="input-style" name="name" id="name" placeholder="Nombre Completo" value="<%= locals.oldData && oldData.name ? oldData.name : ""  %>">
                 <% if (locals.errors && errors.name) { %>
-                <span class="error-message"><%= errors.name.msg %></span> 
+                    <span class="error-message"> <%= errors.name.msg %></span>
                 <% } %>
             </div>
             <div class="input-container">
-                <input type="email" class="input-style" name="email" placeholder="Correo Electrónico">
+                <input type="email" class="input-style" name="email" id="email" placeholder="Correo Electrónico">
                 <% if (locals.errors && errors.email) { %>
                     <span class="error-message"><%= errors.email.msg %></span>
                 <% } %>
             </div>
             <div class="input-container">
-                <input type="password" class="input-style" name="password" placeholder="Contraseña">
-                <% if (locals.errors && errors.email) { %>
-                    <span class="error-message"><%= errors.password.msg %></span>
+                <input type="password" class="input-style" name="password" id="password" placeholder="Contraseña">
+                <% if (locals.errors && errors.password) { %>
+                    <span class="error-message"><%= errors.password.msg %></span> 
                 <% } %>
             </div>
             <div class="btn-container">
@@ -33,7 +33,7 @@
             </div>
             <p>Al registrarte, aceptas nuestras Condiciones de uso y </p>
             <p>Política de privacidad.</p>
-            <span>¿Ya tienes una cuenta? <span><a href="/usuario"><strong> Iniciar Sesión</strong> </a></span></span>
+            <span>¿Ya tienes una cuenta? <span><a href="/usuario/login"><strong> Iniciar Sesión</strong> </a></span></span>
         </form>
     </section>
     

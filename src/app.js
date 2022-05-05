@@ -20,6 +20,9 @@ app.use(express.static('public'));
 /* views ejs config  */
 app.set('view engine', 'ejs')
 app.set('views', 'src/views')
+app.use(express.urlencoded({extended: false})); /* para capturar aquello q vienen del formulario en forma de objeto literal */
+app.use(express.json());
+
 
 /* Middlewares de Rutas */
 app.use("/",indexRouter)  //Home , About
