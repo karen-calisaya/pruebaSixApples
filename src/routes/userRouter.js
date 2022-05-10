@@ -1,7 +1,10 @@
 const express = require("express");
 const userController = require("../controllers/userController");
 const router = express.Router();
-const { check } = require('express-validator');
+const { check, body} = require('express-validator');
+const { getUsers } = require("../data");
+const bcryptjs = require("bcryptjs");
+
 const validateRegister = [
     check('name')
         .notEmpty().withMessage('Debes escribir tu nombre y apellido').bail()
@@ -16,7 +19,14 @@ const validateRegister = [
 
 const validateUser = [
     check('email')
-        .notEmpty().withMessage('campo requerido'),
+        .notEmpty().withMessage('campo requerido').bail()
+        .isEmail().withMessage('ingrese email valido'),
+    body('email').custom((value, {req}) => {
+        let user = getUsers.find(user => user.email === req.body.email);
+        if(bcryptjs.compareSync(req.body.password, user.password)){
+            return true;
+        } return false;
+    }).withMessage('Email o contraseña invalidos'),
     check('password')
         .notEmpty().withMessage('campo requerido')
 ]

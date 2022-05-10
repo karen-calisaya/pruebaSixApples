@@ -4,7 +4,8 @@ const path = require('path');
 /* requerimos dotenv para la variable de entorno */
 require('dotenv').config();
 const port = process.env.port || 3000;
-
+const session = require('express-session')
+const cookieParser = require('cookie-parser')
 
 
 /* Enrutadores */
@@ -22,7 +23,12 @@ app.set('view engine', 'ejs')
 app.set('views', 'src/views')
 app.use(express.urlencoded({extended: false})); /* para capturar aquello q vienen del formulario en forma de objeto literal */
 app.use(express.json());
-
+app.use(session({
+    secret: 'Six Apples',
+    resave: false,
+    saveUninitialized: true,
+}));
+app.use(cookieParser());
 
 /* Middlewares de Rutas */
 app.use("/",indexRouter)  //Home , About
