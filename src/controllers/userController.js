@@ -12,7 +12,7 @@ module.exports = {
         let errors = validationResult(req);
         
         if(errors.isEmpty){
-            let user = getUsers.find(user => user.email === user.body.email)
+            let user = getUsers.find(user => user.email === req.body.email)
 
             /* session */
             req.session.user = {
@@ -23,14 +23,24 @@ module.exports = {
                 rol: user.rol
             }
 
+            /* cookies */
+            if(req.body.remember){
+                const TIME_IN_MILISECONDS = 60000;
+                res.cookie('sixApples', req.session.user, {
+                    expires: new Date(Date.now() + TIME_IN_MILISECONDS),
+                    httpOnly: true,
+                    secure: true
+                })
+                
+            }
             res.locals.user = req.session.user
             
             res.redirect('/') 
         }else{
-            res.render('usuario/login', {
+            res.render('users/login', {
                 title: 'Login',
                 errors: errors.mapped(),
-                session:req.session 
+                session: req.session 
         })}
 
     },
@@ -83,6 +93,9 @@ module.exports = {
        /* Paso 4-redireccion */
        res.redirect('/usuario/login')
 
+    },
+    destroySession: (req, res) => {
+        
     }
 }
 

@@ -9,8 +9,13 @@
         </form>
         <nav class="menu-home1">
             <ul>
-                <li id="ingresa"><a href="/usuario/login">Ingresá</a></li><a href="/usuario/login"><i id="user" class="fa-regular fa-circle-user"></i></a>
+                <% if (typeof session.user != "undefined") { %>
+                    <li><a href="/usuario/perfil/ejs?"><div class="image"><%- session.user.name %></div></a></li>
+                <% } else { %>
+                    <li id="ingresa"><a href="/usuario/login">Ingresá</a></li><a href="/usuario/login"><i id="user" class="fa-regular fa-circle-user"></i></a>
+                <% } %> 
                 <li><a href="/productos/carrito"><i id="carrito" class="fa-solid fa-cart-shopping"></i></a></li>
+
             </ul>
         </nav>
         <button id="boton-menu" for="menu"><i class="fa-solid fa-bars"></i></button>

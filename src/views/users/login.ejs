@@ -9,14 +9,22 @@
     <section class="login-section"> 
         <h2 class="login"> Ingresá</h2>
         <br>
-        <form action="" method="">
+        <form action="/usuario/login" method="POST">
             <div class="input-container">
                 <input type="email" class="input-style" name="email" placeholder="Correo Electronico">
-                <span class="error-message">Debe ingresar su email</span>
+                <% if (locals.errors && errors.email) { %>
+                    <span class="error-message"><%= errors.email.msg %></span>
+                <% } %>
             </div>
             <div class="input-container">
-                <input type="password" class="input-style" name="pass" placeholder="Contraseña">
-                <span class="error-message">Debe ingresar su contraseña</span>
+                <input type="password" class="input-style" name="password" placeholder="Contraseña">
+                <% if (locals.errors && errors.password) { %>
+                    <span class="error-message"><% errors.password.msg %> </span>                
+                <% } %>
+            </div>
+            <div class="input-container">
+                <label for="remember">Recordame</label>
+                <input type="checkbox" class="input-style" name="remember" id="remember">
             </div>
             <div>
                 <button type="submit" class="btn-submit"> Continuar</button>
