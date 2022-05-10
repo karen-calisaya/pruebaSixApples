@@ -6,6 +6,30 @@ module.exports = {
             title: "Login"
         }) 
     },
+    processLogin: (req, res) => {
+        let errors = validationResult(req);
+        
+        if(errors.isEmpty){
+            let user = getUsers.find(user => user.email === user.body.email)
+
+           /*  req.session.user = {
+                id: user.id,
+                name: user.name,
+                email: user.email,
+                image:user.image
+            }
+
+            res.locals.user = req.session.user
+             */
+            res.redirect('/') 
+        }else{
+            res.render('users/login', {
+                title: 'Login',
+                errors: errors.mapped(),
+                /* session:req.session */
+        })}
+
+    },
     profile : (req, res)=>{
         res.render('users/profile', { //profile.ejs
             title: "Mi perfil"

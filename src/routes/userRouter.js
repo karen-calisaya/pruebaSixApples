@@ -14,9 +14,16 @@ const validateRegister = [
         .isLength({min: 5}).withMessage('Debe ser una contraseña mayor a 5 caracteres')
 ];
 
+const validateUser = [
+    check('email')
+        .notEmpty().withMessage('campo requerido'),
+    check('password')
+        .notEmpty().withMessage('campo requerido')
+]
 
 /* Ruta para mostrar los productos */
 router.get('/', userController.login);
+router.post('/', validateUser, userController.processLogin);
 router.get('/perfil', userController.profile);
 router.get('/registro', userController.register);
 router.post('/registro', validateRegister, userController.processRegister);
