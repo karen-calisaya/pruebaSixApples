@@ -32,8 +32,8 @@ const validateUser = [
 ]
 
 /* Ruta para mostrar los productos */
-router.get('/', userController.login);
-router.post('/', validateUser, userController.processLogin);
+router.get('/login', userController.login);
+router.post('/login', validateUser, userController.processLogin);
 router.get('/perfil', userController.profile);
 router.get('/registro', userController.register);
 router.post('/registro', validateRegister, userController.processRegister);

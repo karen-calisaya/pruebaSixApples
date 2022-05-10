@@ -1,23 +1,57 @@
 [
     {
-        "id": 0,
-        "name": "",
-        "email": "",
-        "password": "",
-        "avatar": ""
-    },
-    {
         "id": 1,
         "name": "Andrea Chacón",
         "email": "andre@mail.com",
         "password": "123456",
-        "avatar": ""
+        "image": "",
+        "rol": "USER"
     },
     {
         "id": 2,
         "name": "Karen Calisaya",
         "email": "karen@mail.com",
         "password": "654321",
-        "avatar": ""
+        "image": "ADMIN"
+    },
+    {
+        "id": 3,
+        "name": "karen",
+        "email": "mail@email.com",
+        "password": "1234567",
+        "image": "",
+        "rol": "USER"
+    },
+    {
+        "id": 4,
+        "name": "Karen Azul",
+        "email": "mail@email.com",
+        "password": "1234567",
+        "image": "",
+        "rol": "USER"
+    },
+    {
+        "id": 5,
+        "name": "Karen Azul",
+        "email": "mail@email.com",
+        "password": "1234567",
+        "image": "",
+        "rol": "USER"
+    },
+    {
+        "id": 6,
+        "name": "Karen Azul",
+        "email": "mail@email.com",
+        "password": "$2a$10$K8V45ieDYFwZRRRXfndM..IuL634Ker6KKpdW6SiSrZrpZN/vDjJ.",
+        "image": "",
+        "rol": "USER"
+    },
+    {
+        "id": 7,
+        "name": "Karen Azul",
+        "email": "mail@email.com",
+        "password": "$2a$10$NV7R0Rcsmxo14VZtNzFK5eP7PgQ5.DsTdI4XNlJFVNzdaPBEBSrue",
+        "image": "",
+        "rol": "USER"
     }
 ]

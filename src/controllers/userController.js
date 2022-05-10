@@ -1,9 +1,11 @@
 const {getUsers, writeUsers} = require('../data')
 const { validationResult } = require('express-validator');
+const bcrypt = require('bcryptjs')
 module.exports = {
     login: (req, res) => {
         res.render('users/login', { //login.ejs
-            title: "Login"
+            title: "Login",
+            session: req.session
         }) 
     },
     processLogin: (req, res) => {
@@ -12,32 +14,36 @@ module.exports = {
         if(errors.isEmpty){
             let user = getUsers.find(user => user.email === user.body.email)
 
-           /*  req.session.user = {
+            /* session */
+            req.session.user = {
                 id: user.id,
                 name: user.name,
                 email: user.email,
-                image:user.image
+                image:user.image,
+                rol: user.rol
             }
 
             res.locals.user = req.session.user
-             */
+            
             res.redirect('/') 
         }else{
-            res.render('users/login', {
+            res.render('usuario/login', {
                 title: 'Login',
                 errors: errors.mapped(),
-                /* session:req.session */
+                session:req.session 
         })}
 
     },
     profile : (req, res)=>{
         res.render('users/profile', { //profile.ejs
-            title: "Mi perfil"
+            title: "Mi perfil",
+            session: req.session
         }) 
     },
     register: (req, res) => {
         res.render('users/register', { //register.ejs
-            title: "Register"
+            title: "Register",
+            session: req.session
         }) 
     },
     processRegister: (req, res) => {
@@ -47,7 +53,8 @@ module.exports = {
            return res.render('users/register', {
                errors: errors.mapped(),
                oldData: req.body,
-               title: 'Formulario'
+               title: 'Formulario',
+               session: req.session
            })
         }
 
@@ -63,8 +70,9 @@ module.exports = {
            id: ultimoId + 1,
            name: req.body.name,
            email: req.body.email,
-           password: req.body.password,
-           avatar: ""
+           password: bcrypt.hashSync(req.body.password, 10),
+           image: "",
+           rol: "USER"
        }
        // Paso 2 - Guardar el nuevo usuario en el array de usuarios
        getUsers.push(newUser)

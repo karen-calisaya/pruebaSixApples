@@ -2,7 +2,8 @@
 module.exports = {
     productAdd: (req, res) => {
         res.render('admin/productsAdmin/addProduct', {
-            title: "Agregar Producto"
+            title: "Agregar Producto",
+            session: req.session
         })
     }
 }
